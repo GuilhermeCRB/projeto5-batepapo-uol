@@ -1,0 +1,125 @@
+body{
+    --background: #F3F3F3;
+    --header-footer-background: #FFFFFF;
+    --status-message-background: #DCDCDC;
+    --simple-message-background: #FFFFFF;
+    --private-message-background: #FFDEDE;
+    --time-color: #AAAAAA;
+    --dark-screen: rgba(0, 0, 0, 0.6);
+
+    font-family: "Roboto";
+    background-color: var(--background);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--header-footer-background);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav img{
+    width: 75px;
+    height: 53px;
+    margin-left: 22px;
+}
+
+nav .people-icon{
+    width: 52px;
+    height: 41px;
+    margin-right: 22px;
+}
+
+.message-area{
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 106px;
+    margin-bottom: 80px;
+}
+
+.message-area .time{
+    margin-right: 4px;
+    color: var(--time-color);
+}
+
+
+.message-area .user-name{
+    font-weight: bold;
+}
+
+.message-area .message{
+    display: block;
+    padding: 10px 0 10px 8px;
+    margin: 4px 0;
+}
+
+.message-area_simple-message{
+    background-color: var(--simple-message-background);
+}
+
+.message-area_status-message{
+    background-color: var(--status-message-background);
+}
+
+.message-area_status-message .user-name{
+    margin-right: 4px;
+}
+
+.message-area_private-message{
+    background-color: var(--private-message-background);
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--header-footer-background);
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
+
+}
+
+footer input{
+    width: 80%;
+    font-size: 18px;
+    margin-left: 17px;
+    border: none;
+    outline: none;
+}
+
+footer input::-webkit-input-placeholder{
+    font-style: italic;
+    color: #000000;
+}
+
+
+footer .plane-icon{
+    width: 42px;
+    height: 31px;
+    margin-right: 17px;
+}
+
+.dark-screen{
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dark-screen);
+    transition: ease-in-out;
+}
+
+.hidden{
+    display: none;
+}
