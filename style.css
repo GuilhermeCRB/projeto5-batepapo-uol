@@ -37,42 +37,42 @@ nav .people-icon{
     margin-right: 22px;
 }
 
-.message-area{
+.chat{
     font-size: 14px;
     line-height: 20px;
     margin-top: 106px;
     margin-bottom: 80px;
 }
 
-.message-area .time{
+.chat .time{
     margin-right: 4px;
     color: var(--time-color);
 }
 
 
-.message-area .user-name{
+.chat .user-name{
     font-weight: bold;
 }
 
-.message-area .message{
+.chat .message{
     display: block;
     padding: 10px 0 10px 8px;
     margin: 4px 0;
 }
 
-.message-area_simple-message{
+.chat_simple-message{
     background-color: var(--simple-message-background);
 }
 
-.message-area_status-message{
+.chat_status-message{
     background-color: var(--status-message-background);
 }
 
-.message-area_status-message .user-name{
+.chat_status-message .user-name{
     margin-right: 4px;
 }
 
-.message-area_private-message{
+.chat_private-message{
     background-color: var(--private-message-background);
 }
 
