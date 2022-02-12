@@ -60,19 +60,19 @@ nav .people-icon{
     margin: 4px 0;
 }
 
-.chat_simple-message{
+.chat_message{
     background-color: var(--simple-message-background);
 }
 
-.chat_status-message{
+.chat_status{
     background-color: var(--status-message-background);
 }
 
-.chat_status-message .user-name{
+.chat_status .user-name{
     margin-right: 4px;
 }
 
-.chat_private-message{
+.chat_private_message{
     background-color: var(--private-message-background);
 }
 
