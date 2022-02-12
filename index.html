@@ -25,26 +25,11 @@
     </header>
     <main>
         <div class="chat">
-            <!-- <p class="message chat_status">
-                <span class="time">(09:21:45)</span> <span class="user-name">João</span> entra na sala...
-            </p>
-            <p class="message chat_message">
-                <span class="time">(09:21:45)</span> <span class="user-name">João</span> para <span class="user-name">Todos</span>:&nbsp; Bom dia
-            </p>
-            <p class="message chat_private_message">
-                <span class="time">(09:21:45)</span> <span class="user-name">Maria</span> para <span class="user-name">João</span>: &nbsp;Oi João :)
-            </p>
-            <p class="message chat_private_message">
-                <span class="time">(09:21:45)</span> <span class="user-name">João</span> reservadamente para <span class="user-name">Maria</span>: &nbsp;Oi gatinha quer tc?
-            </p>
-            <p class="message chat_status">
-                <span class="time">(09:21:45)</span> <span class="user-name">Maria</span> saiu da sala...
-            </p> -->
         </div>
     </main>
     <footer>
         <input type="text" placeholder="Escreva aqui...">
-        <ion-icon name="paper-plane-outline" class="plane-icon"></ion-icon>
+        <ion-icon name="paper-plane-outline" class="plane-icon" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
     </footer>
     <div class="dark-screen hidden" onclick="closeMessageMenu()"></div>
     <aside>

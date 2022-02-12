@@ -37,6 +37,10 @@ nav .people-icon{
     margin-right: 22px;
 }
 
+nav .people-icon:hover{
+    cursor: pointer;
+}
+
 .chat{
     font-size: 14px;
     line-height: 20px;
@@ -109,6 +113,10 @@ footer .plane-icon{
     width: 42px;
     height: 31px;
     margin-right: 17px;
+}
+
+footer .plane-icon:hover{
+    cursor: pointer;
 }
 
 .dark-screen{
