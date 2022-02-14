@@ -129,7 +129,7 @@ footer .plane-icon:hover{
 }
 
 aside{
-    position: absolute;
+    position: fixed;
     right: -75%;
     top: 0;
     z-index: 2;

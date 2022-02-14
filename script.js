@@ -1,6 +1,17 @@
 let user = { name: prompt("Qual nome de usuário gostaria de utilizar?") };
 const chat = document.querySelector(".chat");
 let intervalStatus; let intervalMessages;
+let previousMessage; let lastMessage;
+
+document.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+
+        let btn = document.querySelector(".plane-icon");
+
+        btn.click();
+
+    }
+});
 
 checkUserName();
 
@@ -38,6 +49,7 @@ function reloadWindow(error) {
 }
 
 function loadChat(response) {
+    chat.innerHTML = ""; //it was necessary to delete the previuos messages got from API to prevent system overload 
     for (let i = 0; i < response.data.length; i++) {
         if (response.data[i].type === "status") {
             chat.innerHTML +=
@@ -60,23 +72,32 @@ function loadChat(response) {
 
 function scrolltoLastMessage() {
     let messageArray = [...chat.querySelectorAll(".message")];
-    messageArray[messageArray.length - 1].scrollIntoView();
+    lastMessage = messageArray[messageArray.length - 1]; console.log(lastMessage.innerText)
+    if (lastMessage.innerText !== previousMessage) {
+        messageArray[messageArray.length - 1].scrollIntoView();
+    }
+    previousMessage = lastMessage.innerText; console.log(previousMessage)
+    //the condition here is necessary to prevent scrollIntoView if there are not any new messages
 }
 
 function sendMessage() {
-    let message = {
-        from: user.name,
-        to: "Todos",
-        text: document.querySelector("input").value,
-        type: "message"
+    let textMessage = document.querySelector("input").value;
+    if (textMessage !== "") {
+        let message = {
+            from: user.name,
+            to: "Todos",
+            text: textMessage,
+            type: "message"
+        }
+        const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message)
+        promise.then(checkForNewMessages); promise.catch(reloadWindow);
+        document.querySelector("input").value = "";
     }
-    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message)
-    promise.then(checkForNewMessages); promise.catch(reloadWindow);
-    document.querySelector("input").value = "";
+    //the condition here is to prevent an error catching by th API
 }
 
 function openMessageMenu(element) {
-    document.querySelector("aside").style.right = "0";
+    document.querySelector("aside").style.right = "0"; console.log(document.querySelector("aside").style.right)
     document.querySelector(".dark-screen").classList.remove("hidden");
 }
 
